@@ -1,0 +1,7 @@
+# This project uses the Python standard library ONLY.
+#
+# There is intentionally nothing to install: every demo runs with
+# `python demo.py` on Python 3.10+ using only stdlib modules
+# (json, re, random, dataclasses, collections, pathlib, argparse, time).
+# Keeping the dependency list empty is a course lesson in itself —
+# automation patterns should be copyable, not installable.
