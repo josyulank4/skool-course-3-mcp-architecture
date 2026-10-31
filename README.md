@@ -136,3 +136,48 @@ code-repo/
                           demo.py + README.md — see each demo's README for its
                           key functions and per-lesson detail)
 ```
+
+## Hands-On Labs (Section 14 — Build It Yourself)
+
+The course's Section 14 turns each section demo into a hands-on lab:
+the code is shown step by step, the demo is run for real, and its
+actual output is read line by line. Each lab lives in `labs/lab-NN/`
+with two git checkpoints:
+
+- **Start** — tag `lab-NN-start`: `demo.py` is a scaffold (docstring,
+  imports and data in place; function bodies are TODOs to implement
+  along with the video).
+- **Finish** — tag `lab-NN`: `demo.py` is the complete working demo,
+  identical to the section demo it builds.
+
+| Lab | Title | Builds demo | Tags |
+|---|---|---|---|
+| 1 | Hello MCP — Run Your First Server | `s01/hello_mcp` | `lab-01-start` / `lab-01` |
+| 2 | Fundamentals — Speak the Protocol | `s02/fundamentals` | `lab-02-start` / `lab-02` |
+| 3 | Transports — Move JSON-RPC Live | `s03/transports` | `lab-03-start` / `lab-03` |
+| 4 | First Server — Build and Call a Tool | `s04/first_server` | `lab-04-start` / `lab-04` |
+| 5 | Primitives — Tools, Resources, Prompts | `s05/primitives` | `lab-05-start` / `lab-05` |
+| 6 | Enterprise — Survive Error Classes | `s06/enterprise` | `lab-06-start` / `lab-06` |
+| 7 | Security — Stop the Injection Drill | `s07/security` | `lab-07-start` / `lab-07` |
+| 8 | Orchestration — Survive Partial Failure | `s08/orchestration` | `lab-08-start` / `lab-08` |
+| 9 | Comparison — Benchmark Three Approaches | `s09/comparison` | `lab-09-start` / `lab-09` |
+| 10 | Testing — Pass the Regression Gate | `s10/testing` | `lab-10-start` / `lab-10` |
+| 11 | Production — Run the Canary Rollback | `s11/production` | `lab-11-start` / `lab-11` |
+| 12 | Ecosystem — Survey the MCP Landscape | `s12/ecosystem` | `lab-12-start` / `lab-12` |
+| 13 | Capstone — Pass the Grading Gate | `s13/capstone` | `lab-13-start` / `lab-13` |
+
+Labs 1, 2, 3, 5 and 12 also carry a `probe_labNN.py` at their finish
+tag: the lab's scripted failure drill, run beside the demo it probes.
+
+Worked example — Lab 1, from a fresh clone:
+
+```bash
+git checkout lab-01-start   # try implementing the server yourself
+git checkout lab-01         # the finished state
+cd labs/lab-01 && python3 demo.py
+```
+
+Every lab passes the stranger test: from a fresh clone, check out the
+lab's finish tag and run its demo — the output matches the lab video's
+run exactly (each lab's README lists its expected first and last
+output lines).
